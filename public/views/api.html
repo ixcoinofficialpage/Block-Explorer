@@ -5,8 +5,10 @@
 <h3><a id="user-content-block" class="anchor" href="#block" aria-hidden="true"><span class="octicon octicon-link"></span></a>Block</h3>
 
 <pre><code>  /api/block/[:hash]
-  /api/block/00000000a967199a2fad0877433c93df785a8d8ce062e5f9b451cd1397bdbf62
+  /api/block/0000000000000000079c58e8b5bce4217f7515a74b170049398ed9b8428beb4a
 </code></pre>
+
+<a href="https://blockexplorer.com/api/block/0000000000000000079c58e8b5bce4217f7515a74b170049398ed9b8428beb4a">Example</a>
 
 <h3><a id="user-content-block-index" class="anchor" href="#block-index" aria-hidden="true"><span class="octicon octicon-link"></span></a>Block index</h3>
 
@@ -23,19 +25,28 @@
 
 <p>which is the hash of the Genesis block (0 height)</p>
 
+<a href="https://blockexplorer.com/api/block-index/0">Example</a>
+
 <h3><a id="user-content-transaction" class="anchor" href="#transaction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Transaction</h3>
 
 <pre><code>  /api/tx/[:txid]
-  /api/tx/525de308971eabd941b139f46c7198b5af9479325c2395db7f2fb5ae8562556c
-  /api/raw/[:rawid]
-  /api/raw/525de308971eabd941b139f46c7198b5af9479325c2395db7f2fb5ae8562556c
+  /api/tx/5756ff16e2b9f881cd15b8a7e478b4899965f87f553b6210d0f8e5bf5be7df1d</code></pre>
+
+<p><a href="https://blockexplorer.com/api/tx/5756ff16e2b9f881cd15b8a7e478b4899965f87f553b6210d0f8e5bf5be7df1d">Example</a></p>
+
+<pre><code>  /api/rawtx/[:rawid]
+  /api/rawtx/5756ff16e2b9f881cd15b8a7e478b4899965f87f553b6210d0f8e5bf5be7df1d
 </code></pre>
+
+<p><a href="https://blockexplorer.com/api/rawtx/5756ff16e2b9f881cd15b8a7e478b4899965f87f553b6210d0f8e5bf5be7df1d">Example</a></p>
 
 <h3><a id="user-content-address" class="anchor" href="#address" aria-hidden="true"><span class="octicon octicon-link"></span></a>Address</h3>
 
 <pre><code>  /api/addr/[:addr][?noTxList=1&amp;noCache=1]
-  /api/addr/mmvP3mTe53qxHdPqXEvdu8WdC7GfQ2vmx5?noTxList=1
+  /api/addr/19SokJG7fgk8iTjemJ2obfMj14FM16nqzj
 </code></pre>
+
+<a href="https://blockexplorer.com/api/addr/19SokJG7fgk8iTjemJ2obfMj14FM16nqzj">Example</a>
 
 <h3><a id="user-content-address-properties" class="anchor" href="#address-properties" aria-hidden="true"><span class="octicon octicon-link"></span></a>Address Properties</h3>
 
@@ -188,6 +199,20 @@ to (optional): 20
   }
 </code></pre>
 
+<h3><a id="user-content-status-of-the-bitcoin-network" class="anchor" href="#status-of-the-bitcoin-network" aria-hidden="true"><span class="octicon octicon-link"></span></a>Status of the bitcoin network</h3>
+
+<pre><code>  /api/status?q=xxx
+</code></pre>
+
+<p>Where "xxx" can be:</p>
+
+<ul>
+<li><a href="https://blockexplorer.com/api/status?q=getInfo">getInfo</a></li>
+<li><a href="https://blockexplorer.com/api/status?q=getDifficulty">getDifficulty</a></li>
+<li><a href="https://blockexplorer.com/api/status?q=getBestBlockHash">getBestBlockHash</a></li>
+<li><a href="https://blockexplorer.com/api/status?q=getLastBlockHash">getLastBlockHash</a></li>
+</ul>
+
 <h3><a id="user-content-historic-blockchain-data-sync-status" class="anchor" href="#historic-blockchain-data-sync-status" aria-hidden="true"><span class="octicon octicon-link"></span></a>Historic blockchain data sync status</h3>
 
 <pre><code>  /api/sync
@@ -197,21 +222,6 @@ to (optional): 20
 
 <pre><code>  /api/peer
 </code></pre>
-
-<h3><a id="user-content-status-of-the-bitcoin-network" class="anchor" href="#status-of-the-bitcoin-network" aria-hidden="true"><span class="octicon octicon-link"></span></a>Status of the bitcoin network</h3>
-
-<pre><code>  /api/status?q=xxx
-</code></pre>
-
-<p>Where "xxx" can be:</p>
-
-<ul>
-<li>getInfo</li>
-<li>getDifficulty</li>
-<li>getTxOutSetInfo</li>
-<li>getBestBlockHash</li>
-<li>getLastBlockHash</li>
-</ul>
 
 <h3><a id="user-content-utility-methods" class="anchor" href="#utility-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Utility methods</h3>
 
@@ -224,7 +234,9 @@ to (optional): 20
 
 <p>The following are the events published by insight:</p>
 
-<p>'tx': new transaction received from network. This event is published in the 'inv' room. Data will be a app/models/Transaction object.
+<h3>'tx':</h3>
+
+<p>New transaction received from network. This event is published in the 'inv' room. Data will be a app/models/Transaction object.
 Sample output:</p>
 
 <pre><code>{
@@ -234,7 +246,9 @@ Sample output:</p>
 }
 </code></pre>
 
-<p>'block': new block received from network. This event is published in the 'inv' room. Data will be a app/models/Block object.
+<h3>'block':</h3>
+
+<p>New block received from network. This event is published in the 'inv' room. Data will be a app/models/Block object.
 Sample output:</p>
 
 <pre><code>{
@@ -244,9 +258,9 @@ Sample output:</p>
 }
 </code></pre>
 
-<p>'': new transaction concerning  received from network. This event is published in the '' room.</p>
+<h3>'status':</h3>
 
-<p>'status': every 1% increment on the sync task, this event will be triggered. This event is published in the 'sync' room.</p>
+<p>Every 1% increment on the sync task, this event will be triggered. This event is published in the 'sync' room.</p>
 
 <p>Sample output:</p>
 
@@ -268,12 +282,12 @@ Sample output:</p>
 
 <pre><code>&lt;html&gt;
 &lt;body&gt;
-  &lt;script src="http://&lt;insight-server&gt;:&lt;port&gt;/socket.io/socket.io.js"&gt;&lt;/script&gt;
+  &lt;script src="https://blockexplorer.com/socket.io/socket.io.js"&gt;&lt;/script&gt;
   &lt;script&gt;
     eventToListenTo = 'tx'
     room = 'inv'
 
-    var socket = io("http://&lt;insight-server&gt;:&lt;port&gt;/");
+    var socket = io("https://blockexplorer.com/");
     socket.on('connect', function() {
       // Join the room.
       socket.emit('subscribe', room);
