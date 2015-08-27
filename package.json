@@ -41,9 +41,6 @@
   "scripts": {
     "start": "INSIGHT_PUBLIC_PATH=public node node_modules/.bin/insight-bitcore-api"
   },
-  "dependencies": {
-    "insight-bitcore-api": ">=0.2.14"
-  },
   "devDependencies": {
     "bower": "~1.2.8",
     "grunt": "~0.4.2",
