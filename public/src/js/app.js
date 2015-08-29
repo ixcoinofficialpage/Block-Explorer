@@ -18,6 +18,7 @@ angular.module('insight',[
   'insight.blocks',
   'insight.transactions',
   'insight.address',
+  'insight.shortaddr',
   'insight.search',
   'insight.status',
   'insight.connection',
@@ -30,6 +31,7 @@ angular.module('insight.socket', []);
 angular.module('insight.blocks', []);
 angular.module('insight.transactions', []);
 angular.module('insight.address', []);
+angular.module('insight.shortaddr', []);
 angular.module('insight.search', []);
 angular.module('insight.status', []);
 angular.module('insight.connection', []);

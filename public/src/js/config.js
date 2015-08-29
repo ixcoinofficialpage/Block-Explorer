@@ -11,6 +11,10 @@ angular.module('insight').config(function($routeProvider) {
       controller: 'BlocksController',
       templateUrl: '/views/redirect.html'
     }).
+    when('/a/:shortAddr', {
+      controller: 'ShortAddrController',
+      templateUrl: '/views/redirect.html'
+    }).
     when('/tx/send', {
       templateUrl: '/views/transaction_sendraw.html',
       title: 'Broadcast Raw Transaction'
