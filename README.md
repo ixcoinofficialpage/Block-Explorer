@@ -6,7 +6,9 @@ front-end and LevelDB for storage.
 
 Check some screenshots and more details at [insight's project homepage](http://insight.is/).
 
-*Insight* project is now split into two repositories. One for the [API](https://github.com/bitpay/insight-api) and for the front-end. This repository is for the front-end, which will install the API as a NPM dependency.
+*Insight* project is now split into two repositories. One for the [API](https://github.com/bitpay/insight-api) and for the front-end. This repository is for the front-end which is an AngularJS app that runs inside the browser and is served as a static Express app from the Insight API. 
+
+To run Insight, you install the Insight API and symlink the public directory to this repository's public directory.
 
 ## Prerequisites
 
@@ -14,42 +16,9 @@ Check some screenshots and more details at [insight's project homepage](http://i
 
 * **NPM** - Node.js package manager, should be automatically installed when you get node.js.
 
-## Quick Install
-  Check the Prerequisites section above before installing.
-
-  To install Insight, clone the main repository:
-
-    $ git clone https://github.com/bitpay/insight.git && cd insight
-
-  Install dependencies:
-
-    $ npm install
-    
-  Run the main application:
-
-    $ npm start
-    
-  Then open a browser and go to:
-
-    http://localhost:3001
-
-  If *insight* reports problems connecting to **bitcoind** please check the CONFIGURATION section of 
-  [insight-api README](https://github.com/bitpay/insight-api/blob/master/README.md). To set the 
-  environment variables run something like:
-  
-     $ INSIGHT_NETWORK=livenet BITCOIND_USER=user BITCOIND_PASS=pass INSIGHT_PUBLIC_PATH=public  npm start
-
-
-  Please note that the app will need to sync its internal database
-  with the blockchain state, which may take some time. You can check
-  sync progress from within the web interface. More details about that process
-  on [insight-api README](https://github.com/bitpay/insight-api/blob/master/README.md). 
-  
-  
 ## Nginx Setup
 
 To use Nginx as a reverse proxy for Insight, use the following base [configuration](https://gist.github.com/matiu/bdd5e55ff0ad90b54261)
-
 
 ## Development
 
