@@ -11,6 +11,14 @@ angular.module('insight').config(function($routeProvider) {
       controller: 'BlocksController',
       templateUrl: 'views/redirect.html'
     }).
+    when('/a/:shortAddr', {
+      controller: 'ShortAddrController',
+      templateUrl: '/views/redirect.html'
+    }).
+    when('/t/:shortTx', {
+      controller: 'ShortTxController',
+      templateUrl: '/views/redirect.html'
+    }).
     when('/tx/send', {
       templateUrl: 'views/transaction_sendraw.html',
       title: 'Broadcast Raw Transaction'
@@ -38,6 +46,10 @@ angular.module('insight').config(function($routeProvider) {
     when('/status', {
       templateUrl: 'views/status.html',
       title: 'Status'
+    }).
+    when('/api', {
+      templateUrl: '/views/api.html',
+      title: 'API'
     }).
     when('/messages/verify', {
       templateUrl: 'views/messages_verify.html',
